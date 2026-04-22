@@ -1,0 +1,12 @@
+
+> alsegurber-web@0.1.0 dev
+> next dev --port 3000
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.230:3000
+✓ Ready in 326ms
+Creating turbopack project { dir: 'C:\\Users\\Pablo\\Desktop\\alsegurber-web', testMode: true }
+
+ GET / 200 in 1308ms (next.js: 1128ms, application-code: 180ms)
+ GET / 200 in 76ms (next.js: 4ms, application-code: 72ms)
