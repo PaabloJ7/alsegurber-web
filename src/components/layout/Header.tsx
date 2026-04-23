@@ -1,27 +1,41 @@
 import Link from "next/link";
-
 import { contact, navItems } from "@/content/site";
 
 export function Header() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="Alsegurber inicio">
-        <span className="brand-mark">A</span>
-        <span>
-          <strong>Alsegurber</strong>
-          <small>Correduria de seguros</small>
-        </span>
-      </Link>
-      <nav className="main-nav" aria-label="Navegacion principal">
-        {navItems.map((item) => (
-          <Link key={item.href} href={item.href}>
-            {item.label}
+      <div className="site-header__inner">
+        <Link className="brand" href="/" aria-label="ALSEGUR inicio">
+          <span className="brand-mark">A</span>
+
+          <span className="brand-copy">
+            <strong>ALSEGUR</strong>
+            <small>Correduría de seguros en Jerez</small>
+          </span>
+        </Link>
+
+        <nav className="main-nav" aria-label="Navegación principal">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className="main-nav__link">
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="header-cta">
+          <a
+            className="header-phone"
+            href={`tel:${contact.phone.replaceAll(" ", "")}`}
+            aria-label={`Llamar al ${contact.phone}`}
+          >
+            {contact.phone}
+          </a>
+
+          <Link className="header-button" href="/contacto">
+            Contactar
           </Link>
-        ))}
-      </nav>
-      <a className="header-action" href={`tel:${contact.phone.replaceAll(" ", "")}`}>
-        {contact.phone}
-      </a>
+        </div>
+      </div>
     </header>
   );
 }
